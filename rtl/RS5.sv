@@ -317,7 +317,7 @@ module RS5
 /////////////////////////////////////////////////////////// EXECUTE /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    execute #(
+    execute_a #(
         .Environment (Environment),
         .MULEXT      (MULEXT),
         .ZKNEEnable  (ZKNEEnable),
@@ -377,6 +377,133 @@ module RS5
         .raise_exception_o       (RAISE_EXCEPTION),
         .exception_code_o        (Exception_Code)
     );
+
+    execute_b #(
+        .Environment (Environment),
+        .MULEXT      (MULEXT),
+        .ZKNEEnable  (ZKNEEnable),
+        .VEnable     (VEnable),
+        .VLEN        (VLEN),
+        .BRANCHPRED  (BRANCHPRED)
+    ) execute2 (
+        .clk                     (clk),
+        .reset_n                 (reset_n),
+        .stall                   (stall),
+        .instruction_i           (instruction_execute),
+        .pc_i                    (pc_execute),
+        .first_operand_i         (first_operand_execute),
+        .second_operand_i        (second_operand_execute),
+        .third_operand_i         (third_operand_execute),
+        .rd_i                    (rd_execute),
+        .rs1_i                   (rs1_execute),
+        .instruction_operation_i (instruction_operation_execute),
+        .instruction_compressed_i(instruction_compressed_execute),
+        .vector_operation_i      (vector_operation_execute),
+        .privilege_i             (privilege),
+        .exc_ilegal_inst_i       (exc_ilegal_inst_execute),
+        .exc_misaligned_fetch_i  (exc_misaligned_fetch_execute),
+        .exc_inst_access_fault_i (exc_inst_access_fault_execute),
+        .exc_load_access_fault_i (mmu_data_fault),
+        .hold_o                  (hold),
+        .write_enable_o          (regbank_write_enable),
+        .write_enable_fwd_o      (write_enable_exec),
+        .instruction_operation_o (instruction_operation_retire),
+        .result_o                (result_retire),
+        .result_fwd_o            (result_exec),
+        .rd_o                    (rd_retire),
+        .mem_address_o           (mem_address),
+        .mem_read_enable_o       (mem_read_enable),
+        .mem_write_enable_o      (mem_write_enable),
+        .mem_write_data_o        (mem_data_o),
+        .mem_read_data_i         (mem_data_i),
+        .csr_address_i           (csr_addr),
+        .csr_read_enable_o       (csr_read_enable),
+        .csr_data_read_i         (csr_data_read),
+        .csr_write_enable_o      (csr_write_enable),
+        .csr_operation_o         (csr_operation),
+        .csr_data_o              (csr_data_to_write),
+        .vtype_o                 (vtype),
+        .vlen_o                  (vlen),
+        .bp_taken_i              (bp_taken_exec),
+        .ctx_switch_o            (ctx_switch),
+        .jump_rollback_o         (jump_rollback),
+        .ctx_switch_target_o     (ctx_switch_target),
+        .jump_target_o           (jump_target),
+        .interrupt_pending_i     (interrupt_pending),
+        .mtvec_i                 (mtvec),
+        .mepc_i                  (mepc),
+        .jump_o                  (jump),
+        .interrupt_ack_o         (interrupt_ack_o),
+        .machine_return_o        (MACHINE_RETURN),
+        .raise_exception_o       (RAISE_EXCEPTION),
+        .exception_code_o        (Exception_Code)
+    );
+
+    execute_c #(
+        .Environment (Environment),
+        .MULEXT      (MULEXT),
+        .ZKNEEnable  (ZKNEEnable),
+        .VEnable     (VEnable),
+        .VLEN        (VLEN),
+        .BRANCHPRED  (BRANCHPRED)
+    ) execute3 (
+        .clk                     (clk),
+        .reset_n                 (reset_n),
+        .stall                   (stall),
+        .instruction_i           (instruction_execute),
+        .pc_i                    (pc_execute),
+        .first_operand_i         (first_operand_execute),
+        .second_operand_i        (second_operand_execute),
+        .third_operand_i         (third_operand_execute),
+        .rd_i                    (rd_execute),
+        .rs1_i                   (rs1_execute),
+        .instruction_operation_i (instruction_operation_execute),
+        .instruction_compressed_i(instruction_compressed_execute),
+        .vector_operation_i      (vector_operation_execute),
+        .privilege_i             (privilege),
+        .exc_ilegal_inst_i       (exc_ilegal_inst_execute),
+        .exc_misaligned_fetch_i  (exc_misaligned_fetch_execute),
+        .exc_inst_access_fault_i (exc_inst_access_fault_execute),
+        .exc_load_access_fault_i (mmu_data_fault),
+        .hold_o                  (hold),
+        .write_enable_o          (regbank_write_enable),
+        .write_enable_fwd_o      (write_enable_exec),
+        .instruction_operation_o (instruction_operation_retire),
+        .result_o                (result_retire),
+        .result_fwd_o            (result_exec),
+        .rd_o                    (rd_retire),
+        .mem_address_o           (mem_address),
+        .mem_read_enable_o       (mem_read_enable),
+        .mem_write_enable_o      (mem_write_enable),
+        .mem_write_data_o        (mem_data_o),
+        .mem_read_data_i         (mem_data_i),
+        .csr_address_i           (csr_addr),
+        .csr_read_enable_o       (csr_read_enable),
+        .csr_data_read_i         (csr_data_read),
+        .csr_write_enable_o      (csr_write_enable),
+        .csr_operation_o         (csr_operation),
+        .csr_data_o              (csr_data_to_write),
+        .vtype_o                 (vtype),
+        .vlen_o                  (vlen),
+        .bp_taken_i              (bp_taken_exec),
+        .ctx_switch_o            (ctx_switch),
+        .jump_rollback_o         (jump_rollback),
+        .ctx_switch_target_o     (ctx_switch_target),
+        .jump_target_o           (jump_target),
+        .interrupt_pending_i     (interrupt_pending),
+        .mtvec_i                 (mtvec),
+        .mepc_i                  (mepc),
+        .jump_o                  (jump),
+        .interrupt_ack_o         (interrupt_ack_o),
+        .machine_return_o        (MACHINE_RETURN),
+        .raise_exception_o       (RAISE_EXCEPTION),
+        .exception_code_o        (Exception_Code)
+    );
+
+
+    // arbiter arbiter1 ();
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////// RETIRE //////////////////////////////////////////////////////////////////////////////////
