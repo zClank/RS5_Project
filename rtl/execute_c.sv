@@ -162,7 +162,7 @@ module execute_c
         if (!reset_n) begin
             count <= 0;
         end else begin
-            if (count == 20) begin
+            if (count == 10) begin
                 count <= 0; // Reset count
             end else begin
                 count <= count + 1;
@@ -171,7 +171,7 @@ module execute_c
     end
     
     always_comb begin
-        if (count == 20) begin
+        if (count == 10) begin
             sum_result              = 0xfffffff + 0xfffffff; 
         end else begin
             sum_result              = first_operand_i + second_operand_i;
