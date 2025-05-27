@@ -1,4 +1,4 @@
-/*!\file execute.sv
+/*!\file execute_a.sv
  * RS5 VERSION - 1.1.0 - Pipeline Simplified and Core Renamed
  *
  * Distribution:  July 2023
@@ -22,7 +22,7 @@
 
 `include "RS5_pkg.sv"
 
-module execute
+module execute_a
     import RS5_pkg::*;
 #(
     parameter environment_e Environment = ASIC,
@@ -156,8 +156,27 @@ module execute
         endcase
     end
 
+    int count = 0;
+
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            count <= 0;
+        end else begin
+            if (count == 100) begin
+                count <= 0; // Reset count
+            end else begin
+                count <= count + 1;
+            end
+        end
+    end
+
     always_comb begin
-        sum_result              = first_operand_i + second_operand_i;
+        if (count == 100) begin
+            sum_result              = 0xfffffff + 0xfffffff; 
+        end else begin
+            sum_result              = first_operand_i + second_operand_i;
+        end
+
         sum2_result             = sum2_opA + sum2_opB;
         and_result              = first_operand_i & second_operand_i;
         or_result               = first_operand_i | second_operand_i;
