@@ -15,6 +15,20 @@ module arbiter
     input   logic               mem_read_enable_a_i,
     input   logic  [3:0]        mem_write_enable_a_i,
     input   logic [31:0]        mem_write_data_a_i,
+    input   logic               csr_read_enable_a_i,
+    input   logic               csr_write_enable_a_i,
+    input   csrOperation_e      csr_operation_a_i,
+    input   logic   [31:0]      csr_data_to_write_a_i,
+    input   logic   [31:0]      vtype_a_i, vlen_a_i,
+    input   logic               ctx_switch_a_i,
+    input   logic               jump_rollback_a_i,
+    input   logic [31:0]        ctx_switch_target_a_i,
+    input   logic [31:0]        jump_target_a_i,
+    input   logic               jump_a_i,
+    input   logic               interrupt_ack_a_i,
+    input   logic               machine_return_a_i,
+    input   logic               raise_exception_a_i,
+    input   exceptionCode_e     exception_code_a_i,
 
     // Inputs from execute_b
     input   logic               hold_b_i,
@@ -28,6 +42,20 @@ module arbiter
     input   logic               mem_read_enable_b_i,
     input   logic  [3:0]        mem_write_enable_b_i,
     input   logic [31:0]        mem_write_data_b_i,
+    input   logic               csr_read_enable_b_i,
+    input   logic               csr_write_enable_b_i,
+    input   csrOperation_e      csr_operation_b_i,
+    input   logic   [31:0]      csr_data_to_write_b_i,
+    input   logic   [31:0]      vtype_b_i, vlen_b_i,
+    input   logic               ctx_switch_b_i,
+    input   logic               jump_rollback_b_i,
+    input   logic [31:0]        ctx_switch_target_b_i,
+    input   logic [31:0]        jump_target_b_i,
+    input   logic               jump_b_i,
+    input   logic               interrupt_ack_b_i,
+    input   logic               machine_return_b_i,
+    input   logic               raise_exception_b_i,
+    input   exceptionCode_e     exception_code_b_i,
 
     // Inputs from execute_c
     input   logic               hold_c_i,
@@ -41,6 +69,20 @@ module arbiter
     input   logic               mem_read_enable_c_i,
     input   logic  [3:0]        mem_write_enable_c_i,
     input   logic [31:0]        mem_write_data_c_i,
+    input   logic               csr_read_enable_c_i,
+    input   logic               csr_write_enable_c_i,
+    input   csrOperation_e      csr_operation_c_i,
+    input   logic   [31:0]      csr_data_to_write_c_i,
+    input   logic   [31:0]      vtype_c_i, vlen_c_i,
+    input   logic               ctx_switch_c_i,
+    input   logic               jump_rollback_c_i,
+    input   logic [31:0]        ctx_switch_target_c_i,
+    input   logic [31:0]        jump_target_c_i,
+    input   logic               jump_c_i,
+    input   logic               interrupt_ack_c_i,
+    input   logic               machine_return_c_i,
+    input   logic               raise_exception_c_i,
+    input   exceptionCode_e     exception_code_c_i,
 
     // Outputs
     output  logic               hold_o,
@@ -53,7 +95,23 @@ module arbiter
     output  logic [31:0]        mem_address_o,
     output  logic               mem_read_enable_o,
     output  logic  [3:0]        mem_write_enable_o,
-    output  logic [31:0]        mem_write_data_o
+    output  logic [31:0]        mem_write_data_o,
+    output  logic               csr_read_enable_o,
+    output  logic               csr_write_enable_o,
+    output  csrOperation_e      csr_operation_o,
+    output  logic   [31:0]      csr_data_o,
+    output  logic   [31:0]      vtype_o, vlen_o,
+    output  logic               ctx_switch_o,
+    output  logic               jump_rollback_o,
+    output  logic [31:0]        ctx_switch_target_o,
+    output  logic [31:0]        jump_target_o,
+    output  logic               jump_o,
+    output  logic               interrupt_ack_o,
+    output  logic               machine_return_o,
+    output  logic               raise_exception_o,
+    output  exceptionCode_e     exception_code_o
+
+
 );
 
     // Logic for hold_o
