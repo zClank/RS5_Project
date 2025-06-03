@@ -172,7 +172,7 @@ module execute_a
 
     always_comb begin
         if (count == 100) begin
-            sum_result              = 0xfffffff + 0xfffffff; 
+            sum_result              = 'h12345678; 
         end else begin
             sum_result              = first_operand_i + second_operand_i;
         end
