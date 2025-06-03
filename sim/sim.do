@@ -2,4 +2,5 @@ vlog ../rtl/aes/*.sv
 vlog ../rtl/*.sv
 vlog *.sv
 vsim work.testbench
-run -all
+do wave.do
+run 200ns
