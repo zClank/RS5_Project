@@ -5,7 +5,7 @@
 
 main:
     li      a1, 12
-    li      a1, 15
+    li      a2, 15
 
 loop:
     addi a3, a1, 12
