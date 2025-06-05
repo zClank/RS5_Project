@@ -478,6 +478,13 @@ module RS5
         .exception_code_o        (exception_code_a)
     );
 
+    
+    always_ff @(posedge clk) begin
+        $display("result_a: ", result_a);
+        $display("pc_execute: ", pc_execute);
+        $display("instruction_operation_execute: ", instruction_operation_execute);
+    end
+
     execute_b #(
         .Environment (Environment),
         .MULEXT      (MULEXT),
@@ -539,6 +546,12 @@ module RS5
         .raise_exception_o       (raise_exception_b),
         .exception_code_o        (exception_code_b)
     );
+
+    always_ff @(posedge clk) begin
+        $display("result_b: ", result_b);
+        $display("pc_execute: ", pc_execute);
+        $display("instruction_operation_execute: ", instruction_operation_execute);
+    end
 
     execute_c #(
         .Environment (Environment),
@@ -602,6 +615,11 @@ module RS5
         .exception_code_o        (exception_code_c)
     );
 
+    always_ff @(posedge clk) begin
+        $display("result_c: ", result_c);
+        $display("pc_execute: ", pc_execute);
+        $display("instruction_operation_execute: ", instruction_operation_execute);
+    end
 
     arbiter arbiter1 (
         // Inputs from execute_a

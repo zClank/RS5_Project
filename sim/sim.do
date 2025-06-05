@@ -1,6 +1,6 @@
 vlog ../rtl/aes/*.sv
 vlog ../rtl/*.sv
 vlog *.sv
-vsim work.testbench
+vsim -voptargs=+acc work.testbench
 do wave.do
-run 200ns
+run 1ms

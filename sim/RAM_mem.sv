@@ -29,7 +29,7 @@ module RAM_mem
     parameter string DEBUG_PATH = "./debug/",
 `endif
     parameter int    MEM_WIDTH  = 65536,
-    parameter string BIN_FILE   = "../app/berkeley_suite/test.bin"
+    parameter string BIN_FILE   = "../app/assembly/asm.bin"
 )
 (
     input  logic                             clk,

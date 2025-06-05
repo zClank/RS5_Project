@@ -46,7 +46,7 @@ module testbench
 `endif
 
     localparam int           MEM_WIDTH       = 65_536;
-    localparam string        BIN_FILE        = "../app/riscv-tests/test.bin";
+    localparam string        BIN_FILE        = "../app/assembly/asm.bin";
 
     localparam int           i_cnt = 1;
 
@@ -68,7 +68,7 @@ module testbench
     initial begin
         reset_n = 0;                                          // RESET for CPU initialization
 
-        #100 reset_n = 1;                                     // Hold state for 100 ns
+        #10 reset_n = 1;                                     // Hold state for 100 ns
     end
 
 //////////////////////////////////////////////////////////////////////////////
