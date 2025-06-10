@@ -257,4 +257,214 @@ module arbiter
         end
     end
 
+    // Logic for csr_read_enable_o
+    always_comb begin
+        if (csr_read_enable_a_i == csr_read_enable_b_i) begin
+            csr_read_enable_o = csr_read_enable_a_i;
+        end else if (csr_read_enable_a_i == csr_read_enable_c_i) begin
+            csr_read_enable_o = csr_read_enable_a_i;
+        end else if (csr_read_enable_b_i == csr_read_enable_c_i) begin
+            csr_read_enable_o = csr_read_enable_b_i;
+        end else begin
+            csr_read_enable_o = csr_read_enable_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for csr_write_enable_o
+    always_comb begin
+        if (csr_write_enable_a_i == csr_write_enable_b_i) begin
+            csr_write_enable_o = csr_write_enable_a_i;
+        end else if (csr_write_enable_a_i == csr_write_enable_c_i) begin
+            csr_write_enable_o = csr_write_enable_a_i;
+        end else if (csr_write_enable_b_i == csr_write_enable_c_i) begin
+            csr_write_enable_o = csr_write_enable_b_i;
+        end else begin
+            csr_write_enable_o = csr_write_enable_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for csr_operation_o
+    always_comb begin
+        if (csr_operation_a_i == csr_operation_b_i) begin
+            csr_operation_o = csr_operation_a_i;
+        end else if (csr_operation_a_i == csr_operation_c_i) begin
+            csr_operation_o = csr_operation_a_i;
+        end else if (csr_operation_b_i == csr_operation_c_i) begin
+            csr_operation_o = csr_operation_b_i;
+        end else begin
+            csr_operation_o = csr_operation_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for csr_data_o
+    always_comb begin
+        if (csr_data_to_write_a_i == csr_data_to_write_b_i) begin
+            csr_data_o = csr_data_to_write_a_i;
+        end else if (csr_data_to_write_a_i == csr_data_to_write_c_i) begin
+            csr_data_o = csr_data_to_write_a_i;
+        end else if (csr_data_to_write_b_i == csr_data_to_write_c_i) begin
+            csr_data_o = csr_data_to_write_b_i;
+        end else begin
+            csr_data_o = csr_data_to_write_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for vtype_o
+    always_comb begin
+        if (vtype_a_i == vtype_b_i) begin
+            vtype_o = vtype_a_i;
+        end else if (vtype_a_i == vtype_c_i) begin
+            vtype_o = vtype_a_i;
+        end else if (vtype_b_i == vtype_c_i) begin
+            vtype_o = vtype_b_i;
+        end else begin
+            vtype_o = vtype_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for vlen_o
+    always_comb begin
+        if (vlen_a_i == vlen_b_i) begin
+            vlen_o = vlen_a_i;
+        end else if (vlen_a_i == vlen_c_i) begin
+            vlen_o = vlen_a_i;
+        end else if (vlen_b_i == vlen_c_i) begin
+            vlen_o = vlen_b_i;
+        end else begin
+            vlen_o = vlen_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for ctx_switch_o
+    always_comb begin
+        if (ctx_switch_a_i == ctx_switch_b_i) begin
+            ctx_switch_o = ctx_switch_a_i;
+        end else if (ctx_switch_a_i == ctx_switch_c_i) begin
+            ctx_switch_o = ctx_switch_a_i;
+        end else if (ctx_switch_b_i == ctx_switch_c_i) begin
+            ctx_switch_o = ctx_switch_b_i;
+        end else begin
+            ctx_switch_o = ctx_switch_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for jump_rollback_o
+    always_comb begin
+        if (jump_rollback_a_i == jump_rollback_b_i) begin
+            jump_rollback_o = jump_rollback_a_i;
+        end else if (jump_rollback_a_i == jump_rollback_c_i) begin
+            jump_rollback_o = jump_rollback_a_i;
+        end else if (jump_rollback_b_i == jump_rollback_c_i) begin
+            jump_rollback_o = jump_rollback_b_i;
+        end else begin
+            jump_rollback_o = jump_rollback_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for ctx_switch_target_o
+    always_comb begin
+        if (ctx_switch_target_a_i == ctx_switch_target_b_i) begin
+            ctx_switch_target_o = ctx_switch_target_a_i;
+        end else if (ctx_switch_target_a_i == ctx_switch_target_c_i) begin
+            ctx_switch_target_o = ctx_switch_target_a_i;
+        end else if (ctx_switch_target_b_i == ctx_switch_target_c_i) begin
+            ctx_switch_target_o = ctx_switch_target_b_i;
+        end else begin
+            ctx_switch_target_o = ctx_switch_target_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for jump_target_o
+    always_comb begin
+        if (jump_target_a_i == jump_target_b_i) begin
+            jump_target_o = jump_target_a_i;
+        end else if (jump_target_a_i == jump_target_c_i) begin
+            jump_target_o = jump_target_a_i;
+        end else if (jump_target_b_i == jump_target_c_i) begin
+            jump_target_o = jump_target_b_i;
+        end else begin
+            jump_target_o = jump_target_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for jump_o
+    always_comb begin
+        if (jump_a_i == jump_b_i) begin
+            jump_o = jump_a_i;
+        end else if (jump_a_i == jump_c_i) begin
+            jump_o = jump_a_i;
+        end else if (jump_b_i == jump_c_i) begin
+            jump_o = jump_b_i;
+        end else begin
+            jump_o = jump_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for interrupt_ack_o
+    always_comb begin
+        if (interrupt_ack_a_i == interrupt_ack_b_i) begin
+            interrupt_ack_o = interrupt_ack_a_i;
+        end else if (interrupt_ack_a_i == interrupt_ack_c_i) begin
+            interrupt_ack_o = interrupt_ack_a_i;
+        end else if (interrupt_ack_b_i == interrupt_ack_c_i) begin
+            interrupt_ack_o = interrupt_ack_b_i;
+        end else begin
+            interrupt_ack_o = interrupt_ack_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for machine_return_o
+    always_comb begin
+        if (machine_return_a_i == machine_return_b_i) begin
+            machine_return_o = machine_return_a_i;
+        end else if (machine_return_a_i == machine_return_c_i) begin
+            machine_return_o = machine_return_a_i;
+        end else if (machine_return_b_i == machine_return_c_i) begin
+            machine_return_o = machine_return_b_i;
+        end else begin
+            machine_return_o = machine_return_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for raise_exception_o
+    always_comb begin
+        if (raise_exception_a_i == raise_exception_b_i) begin
+            raise_exception_o = raise_exception_a_i;
+        end else if (raise_exception_a_i == raise_exception_c_i) begin
+            raise_exception_o = raise_exception_a_i;
+        end else if (raise_exception_b_i == raise_exception_c_i) begin
+            raise_exception_o = raise_exception_b_i;
+        end else begin
+            raise_exception_o = raise_exception_a_i; // All different, use 'a'
+        end
+    end
+
+
+    // Logic for exception_code_o
+    always_comb begin
+        if (exception_code_a_i == exception_code_b_i) begin
+            exception_code_o = exception_code_a_i;
+        end else if (exception_code_a_i == exception_code_c_i) begin
+            exception_code_o = exception_code_a_i;
+        end else if (exception_code_b_i == exception_code_c_i) begin
+            exception_code_o = exception_code_b_i;
+        end else begin
+            exception_code_o = exception_code_a_i; // All different, use 'a'
+        end
+    end
+
+
 endmodule

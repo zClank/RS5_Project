@@ -413,7 +413,7 @@ module RS5
     end
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////// EXECUTE /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////// EXECUTE 1 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     execute_a #(
@@ -449,6 +449,7 @@ module RS5
         .interrupt_pending_i     (interrupt_pending),
         .mtvec_i                 (mtvec),
         .mepc_i                  (mepc),
+        
         // Outputs to Arbiter
         .hold_o                  (hold_a),
         .write_enable_o          (write_enable_a),
@@ -480,9 +481,9 @@ module RS5
 
     
     always_ff @(posedge clk) begin
-        $display("result_a: ", result_a);
-        $display("pc_execute: ", pc_execute);
-        $display("instruction_operation_execute: ", instruction_operation_execute);
+        // $display("result_a: ", result_a);
+        // $display("pc_execute: ", pc_execute);
+        // $display("instruction_operation_execute: ", instruction_operation_execute);
     end
 
     execute_b #(
@@ -518,6 +519,7 @@ module RS5
         .interrupt_pending_i     (interrupt_pending),
         .mtvec_i                 (mtvec),
         .mepc_i                  (mepc),
+        
         // Outputs to Arbiter
         .hold_o                  (hold_b),
         .write_enable_o          (write_enable_b),
@@ -548,9 +550,9 @@ module RS5
     );
 
     always_ff @(posedge clk) begin
-        $display("result_b: ", result_b);
-        $display("pc_execute: ", pc_execute);
-        $display("instruction_operation_execute: ", instruction_operation_execute);
+        // $display("result_b: ", result_b);
+        // $display("pc_execute: ", pc_execute);
+        // $display("instruction_operation_execute: ", instruction_operation_execute);
     end
 
     execute_c #(
@@ -616,9 +618,9 @@ module RS5
     );
 
     always_ff @(posedge clk) begin
-        $display("result_c: ", result_c);
-        $display("pc_execute: ", pc_execute);
-        $display("instruction_operation_execute: ", instruction_operation_execute);
+        // $display("result_c: ", result_c);
+        // $display("pc_execute: ", pc_execute);
+        // $display("instruction_operation_execute: ", instruction_operation_execute);
     end
 
     arbiter arbiter1 (
