@@ -177,6 +177,7 @@ module arbiter
         end else begin
             result_o = result_a_i; // All different, use 'a'
         end
+        $display("result_o: ", result_o); // Continue from here
     end
 
     // Logic for result_fwd_o
