@@ -175,8 +175,8 @@ module execute_c
             sum_result              = 'h12345678; 
         end else begin
             sum_result              = first_operand_i + second_operand_i;
-            $display("execute_a_first_operand_i: ", first_operand_i);
-            $display("execute_a_second_operand_i: ", second_operand_i);
+            //$display("execute_a_first_operand_i: ", first_operand_i);
+            //$display("execute_a_second_operand_i: ", second_operand_i);
         end
         sum2_result             = sum2_opA + sum2_opB;
         and_result              = first_operand_i & second_operand_i;

@@ -79,7 +79,7 @@ module fetch  #(
             instruction_address_o <= start_address;
         else
             instruction_address_o <= {iaddr_next[31:2], 2'b00};
-        $display("instruction_address_o: ", instruction_address_o);
+        //$display("instruction_address_o: ", instruction_address_o);
     end
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -131,7 +131,7 @@ module fetch  #(
             iaddr_jumped <= start_address;
         else if (jumped)
             iaddr_jumped <= iaddr_next;
-        $display("iaddr_jumped: ", iaddr_jumped);
+        //$display("iaddr_jumped: ", iaddr_jumped);
     end
 
     logic [31:0] iaddr_jumped_r;
@@ -156,7 +156,7 @@ module fetch  #(
             pc_o <= '0;
         else if (enable_i) 
             pc_o <= pc_update;
-        $display("pc_o: ", pc_o);
+        //$display("pc_o: ", pc_o);
     end
 
 ////////////////////////////////////////////////////////////////////////////////
