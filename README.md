@@ -1,6 +1,9 @@
-## Instruções de Execução
+> Projeto desenvolvido como parte da disciplina **98G10-04 Confiabilidade e Segurança de Hardware** — PUCRS  
+> Professor: Anderson Domingues
+🔗 Repositório: [https://github.com/zClank/RS5_Project](https://github.com/zClank/RS5_Project)
 
-Para simular o sistema com redundância tripla, siga os passos abaixo:
+
+## Instruções de Execução
 
 1. **Pré-requisitos**
 
@@ -53,11 +56,17 @@ Para simular o sistema com redundância tripla, siga os passos abaixo:
    * Durante a simulação, os resultados (como tempos de falha e valores dos componentes) são exibidos diretamente no console com comandos `$display`.
    * Após a execução, os dados podem ser consultados no arquivo `transcript`, gerado automaticamente pelo QuestaSim na mesma pasta.
 
-Perfeito! Vamos incluir também a localização do módulo de memória utilizado na simulação. Com base na estrutura fornecida, identifiquei que o arquivo `RAM_mem.sv` está dentro da pasta `sim/`, o que sugere que ele implementa a memória usada no TestBench.
 
-Aqui está a seção **📁 Estrutura do Projeto** atualizada com essa informação:
+### Itens atendidos
 
----
+- [x] Código do processador adaptado com TMR (Triple Modular Redundancy)
+- [x] Módulo árbitro implementado para tomada de decisão
+- [x] TestBench com integração memória-processador
+- [x] Programa com 5000 instruções de soma executado
+- [x] Simulação realizada com coleta de falhas
+- [x] Análise dos resultados com script em Python
+- [x] Comparação com confiabilidade teórica documentada
+
 
 ## Estrutura do Projeto
 
@@ -91,8 +100,7 @@ A seguir está uma visão geral da organização do projeto, com foco nos compon
 │   ├── error_analysis.xlsx                     # Frequência de falhas por módulo
 │   └── cumulative_sample_error_analysis.xlsx   # Análise incremental por amostra
 │
-├── README.md                   # Documentação do projeto (este arquivo)
-└── docs/, imgs/, proto/, ...   # Outros diretórios não essenciais ao escopo do T2
+└── README.md                   # Documentação do projeto (este arquivo)
 
 ```
 
@@ -148,13 +156,13 @@ As falhas no sinal `result_o` representam os ciclos em que os três módulos apr
 A confiabilidade teórica do sistema com redundância 1-de-3 (Triple Modular Redundancy) é dada pela probabilidade de pelo menos dois módulos operarem corretamente. Considerando falhas independentes, a probabilidade de falha do sistema é:
 
 $$
-P_{\text{falha}} = (1 - 0{,}99) \cdot (1 - 0{,}95) \cdot (1 - 0{,}90) = 0{,}00005
+P_{\text{falha}} = (1 - 0,99) \cdot (1 - 0,95) \cdot (1 - 0,90) = 0,00005
 $$
 
 Portanto, a confiabilidade esperada é:
 
 $$
-R_{\text{sistema}} = 1 - 0{,}00005 = 0{,}99995 \quad (99{,}995\%)
+R_{\text{sistema}} = 1 - 0,00005 = 0,99995
 $$
 
 ### Comparação entre simulação e análise teórica
@@ -169,3 +177,10 @@ A diferença entre o valor esperado teoricamente (99,995%) e o observado (99,48%
 
 Outras fontes potenciais de discrepância incluem o comportamento do árbitro, o alinhamento dos tempos de processamento e o próprio método de coleta e interpretação dos resultados.
 
+### Informações adicionais
+
+**Autores**:  
+André Lisboa
+Felipe Lacerda
+Lucas Azevedo
+Pedro Filippi
