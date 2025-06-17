@@ -148,6 +148,8 @@ A tabela abaixo apresenta a proporção de falhas observadas em cada componente,
 | `result_b_i` | 4,44%               |
 | `result_c_i` | 8,52%               |
 
+![errors_plot](data_analysis/errors_plot.jpg)
+
 ### Falhas completas do sistema
 
 As falhas no sinal `result_o` representam os ciclos em que os três módulos apresentaram erro simultaneamente. Nesse conjunto de dados, foram identificadas 26 ocorrências desse tipo em 5000 operações.
