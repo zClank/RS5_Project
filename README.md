@@ -71,7 +71,7 @@
 
 ## Estrutura do Projeto
 
-A seguir está uma visão geral da organização do projeto, com foco nos componentes relacionados à simulação do processador RS5 com redundância tripla:
+A seguir está uma visão geral da organização do projeto, com foco nos componentes relacionados à simulação:
 
 ```
 .
