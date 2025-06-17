@@ -1,0 +1,489 @@
+.
+├── app
+│   ├── aes-test
+│   │   ├── aes128_nist_enc_test.c
+│   │   ├── bareOS
+│   │   │   ├── arch.s
+│   │   │   ├── crt0.s
+│   │   │   ├── include
+│   │   │   │   ├── hal.h
+│   │   │   │   ├── libos.h
+│   │   │   │   └── prototypes.h
+│   │   │   ├── libos.c
+│   │   │   ├── malloc.c
+│   │   │   └── softmul.c
+│   │   ├── Makefile
+│   │   ├── riscv.ld
+│   │   └── tinycrypt
+│   │       ├── aes_encrypt.c
+│   │       ├── ccm_mode.c
+│   │       ├── ctr_mode.c
+│   │       ├── ctr_prng.c
+│   │       ├── include
+│   │       │   ├── aes.h
+│   │       │   ├── ccm_mode.h
+│   │       │   ├── constants.h
+│   │       │   ├── ctr_mode.h
+│   │       │   ├── ctr_prng.h
+│   │       │   ├── sha256.h
+│   │       │   ├── sha512.h
+│   │       │   ├── test_utils.h
+│   │       │   └── utils.h
+│   │       ├── sha256.c
+│   │       ├── sha512.c
+│   │       └── utils.c
+│   ├── assembly
+│   │   ├── asm.bin
+│   │   ├── asm.lst
+│   │   ├── asm.s
+│   │   ├── Makefile
+│   │   ├── riscv.ld
+│   │   ├── vectorlsu.s
+│   │   ├── vector.s
+│   │   ├── vle_vse.s
+│   │   └── vlse_vsse.s
+│   ├── assembly2
+│   │   ├── asm.s
+│   │   ├── Makefile
+│   │   ├── riscv.ld
+│   │   ├── vectorlsu.s
+│   │   ├── vector.s
+│   │   ├── vle_vse.s
+│   │   └── vlse_vsse.s
+│   ├── common
+│   │   ├── common.mk
+│   │   ├── crt0.S
+│   │   ├── include
+│   │   │   └── riscv-csr.h
+│   │   ├── link.ld
+│   │   └── newlib.c
+│   ├── conv
+│   │   ├── lib
+│   │   │   ├── printf.c
+│   │   │   ├── printf.h
+│   │   │   └── serial.c
+│   │   ├── Makefile
+│   │   ├── model.c
+│   │   ├── params
+│   │   │   ├── 0_bias_int.h
+│   │   │   ├── 0_weight_int.h
+│   │   │   ├── 3_bias_int.h
+│   │   │   ├── 3_weight_int.h
+│   │   │   ├── 6_bias_int.h
+│   │   │   ├── 6_weight_int.h
+│   │   │   ├── classifier_1_bias_int.h
+│   │   │   ├── classifier_1_weight_int.h
+│   │   │   ├── classifier_2_bias_int.h
+│   │   │   ├── classifier_2_weight_int.h
+│   │   │   └── dataset120_eval_int.h
+│   │   ├── rs5.ld
+│   │   ├── script.py
+│   │   └── test.S
+│   ├── conv_compressed
+│   │   ├── lib
+│   │   │   ├── printf.c
+│   │   │   ├── printf.h
+│   │   │   └── serial.c
+│   │   ├── Makefile
+│   │   ├── model.c
+│   │   ├── params
+│   │   │   ├── 0_bias_indices_compressed.h
+│   │   │   ├── 0_bias_lut.h
+│   │   │   ├── 0_weight_indices_compressed.h
+│   │   │   ├── 0_weight_lut.h
+│   │   │   ├── 3_bias_indices_compressed.h
+│   │   │   ├── 3_bias_lut.h
+│   │   │   ├── 3_weight_indices_compressed.h
+│   │   │   ├── 3_weight_lut.h
+│   │   │   ├── 6_bias_indices_compressed.h
+│   │   │   ├── 6_bias_lut.h
+│   │   │   ├── 6_weight_indices_compressed.h
+│   │   │   ├── 6_weight_lut.h
+│   │   │   ├── classifier_1_bias_indices_compressed.h
+│   │   │   ├── classifier_1_bias_lut.h
+│   │   │   ├── classifier_1_weight_indices_compressed.h
+│   │   │   ├── classifier_1_weight_lut.h
+│   │   │   ├── classifier_2_bias_indices_compressed.h
+│   │   │   ├── classifier_2_bias_lut.h
+│   │   │   ├── classifier_2_weight_indices_compressed.h
+│   │   │   ├── classifier_2_weight_lut.h
+│   │   │   └── dataset120_eval_int.h
+│   │   ├── rs5.ld
+│   │   └── test.S
+│   ├── coremark
+│   │   ├── arch.s
+│   │   ├── core_list_join.c
+│   │   ├── core_main.c
+│   │   ├── coremark.h
+│   │   ├── core_matrix.c
+│   │   ├── core_portme.c
+│   │   ├── core_portme.h
+│   │   ├── core_state.c
+│   │   ├── core_util.c
+│   │   ├── crt0.s
+│   │   ├── ee_printf.c
+│   │   ├── hal.h
+│   │   ├── LICENSE.md
+│   │   ├── LICENSE.txt
+│   │   ├── Makefile
+│   │   ├── prototypes.h
+│   │   ├── README.md
+│   │   ├── riscv.ld
+│   │   └── softmul.c
+│   ├── counter-test
+│   │   ├── Makefile
+│   │   └── src
+│   │       └── counter-test.c
+│   ├── hello
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   └── src
+│   │       └── hello.c
+│   ├── isr-tests
+│   │   ├── Makefile
+│   │   ├── rs5.ld
+│   │   └── test.S
+│   ├── riscv-tests
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── rs5.ld
+│   │   ├── tests
+│   │   │   ├── addi.S
+│   │   │   ├── add.S
+│   │   │   ├── andi.S
+│   │   │   ├── and.S
+│   │   │   ├── auipc.S
+│   │   │   ├── beq.S
+│   │   │   ├── bge.S
+│   │   │   ├── bgeu.S
+│   │   │   ├── blt.S
+│   │   │   ├── bltu.S
+│   │   │   ├── bne.S
+│   │   │   ├── csr.S
+│   │   │   ├── div.S
+│   │   │   ├── divu.S
+│   │   │   ├── ebreak.S
+│   │   │   ├── ecall.S
+│   │   │   ├── encoding.h
+│   │   │   ├── jalr.S
+│   │   │   ├── jal.S
+│   │   │   ├── j.S
+│   │   │   ├── lb.S
+│   │   │   ├── lbu.S
+│   │   │   ├── lh.S
+│   │   │   ├── lhu.S
+│   │   │   ├── LICENSE
+│   │   │   ├── lui.S
+│   │   │   ├── lw.S
+│   │   │   ├── mcsr.S
+│   │   │   ├── mulh.S
+│   │   │   ├── mulhsu.S
+│   │   │   ├── mulhu.S
+│   │   │   ├── mul.S
+│   │   │   ├── ori.S
+│   │   │   ├── or.S
+│   │   │   ├── rem.S
+│   │   │   ├── remu.S
+│   │   │   ├── riscv_test.h
+│   │   │   ├── rvc.S
+│   │   │   ├── sb.S
+│   │   │   ├── sh.S
+│   │   │   ├── simple.S
+│   │   │   ├── slli.S
+│   │   │   ├── sll.S
+│   │   │   ├── slti.S
+│   │   │   ├── sltiu.S
+│   │   │   ├── slt.S
+│   │   │   ├── sltu.S
+│   │   │   ├── srai.S
+│   │   │   ├── sra.S
+│   │   │   ├── srli.S
+│   │   │   ├── srl.S
+│   │   │   ├── sub.S
+│   │   │   ├── sw.S
+│   │   │   ├── test_macros.h
+│   │   │   ├── wfi.S
+│   │   │   ├── xori.S
+│   │   │   ├── xor.S
+│   │   │   └── zicntr.S
+│   │   └── test.S
+│   ├── samplecode
+│   │   ├── bareOS
+│   │   │   ├── arch.s
+│   │   │   ├── crt0.s
+│   │   │   ├── include
+│   │   │   │   ├── hal.h
+│   │   │   │   ├── libos.h
+│   │   │   │   └── prototypes.h
+│   │   │   ├── libos.c
+│   │   │   ├── malloc.c
+│   │   │   └── softmul.c
+│   │   ├── dummy.c
+│   │   ├── helloworld.c
+│   │   ├── Makefile
+│   │   ├── riscv.ld
+│   │   ├── test_hanoi.c
+│   │   └── vector.c
+│   ├── UART_RX
+│   │   ├── asm.S
+│   │   ├── Makefile
+│   │   └── riscv.ld
+│   └── vector-tests
+│       ├── custom
+│       │   └── vredsum2.c
+│       ├── Makefile
+│       ├── mem_operations
+│       │   ├── vl1r.c
+│       │   ├── vl.c
+│       │   ├── vle16.c
+│       │   ├── vle32.c
+│       │   ├── vle8.c
+│       │   ├── vle_vse_hazards.c
+│       │   ├── vls.c
+│       │   ├── vluxei.c
+│       │   ├── vs1r.c
+│       │   ├── vs.c
+│       │   ├── vse16.c
+│       │   ├── vse32.c
+│       │   ├── vse8.c
+│       │   ├── vss.c
+│       │   └── vsuxei.c
+│       ├── operations
+│       │   ├── vadd.c
+│       │   ├── vdiv.c
+│       │   ├── vdivu.c
+│       │   ├── vmacc.c
+│       │   ├── vmadd.c
+│       │   ├── vmax.c
+│       │   ├── vmaxu.c
+│       │   ├── vmin.c
+│       │   ├── vminu.c
+│       │   ├── vmseq.c
+│       │   ├── vmsgt.c
+│       │   ├── vmsgtu.c
+│       │   ├── vmsle.c
+│       │   ├── vmsleu.c
+│       │   ├── vmslt.c
+│       │   ├── vmsltu.c
+│       │   ├── vmsne.c
+│       │   ├── vmul.c
+│       │   ├── vmulh.c
+│       │   ├── vmulhsu.c
+│       │   ├── vmulhu.c
+│       │   ├── vmv.c
+│       │   ├── vmvsx.c
+│       │   ├── vmvxs.c
+│       │   ├── vnmsac.c
+│       │   ├── vnmsub.c
+│       │   ├── vor.c
+│       │   ├── vredand.c
+│       │   ├── vredmax.c
+│       │   ├── vredmaxu.c
+│       │   ├── vredmin.c
+│       │   ├── vredminu.c
+│       │   ├── vredor.c
+│       │   ├── vredsum.c
+│       │   ├── vredxor.c
+│       │   ├── vrem.c
+│       │   ├── vremu.c
+│       │   ├── vrsub.c
+│       │   ├── vsetivli.c
+│       │   ├── vsetvl.c
+│       │   ├── vsetvli.c
+│       │   ├── vsll.c
+│       │   ├── vsra.c
+│       │   ├── vsrl.c
+│       │   ├── vsub.c
+│       │   ├── vwmul.c
+│       │   ├── vwmulsu.c
+│       │   ├── vwmulu.c
+│       │   └── vxor.c
+│       ├── rs5.ld
+│       ├── test
+│       │   ├── dataset.h
+│       │   ├── encoding.h
+│       │   ├── long_array.h
+│       │   ├── printf.c
+│       │   ├── printf.h
+│       │   ├── riscv_test.h
+│       │   ├── serial.c
+│       │   ├── test_macros.h
+│       │   └── vector_macros.h
+│       ├── test.S
+│       └── waiting
+│           └── vmvnrr.c
+├── data_analysis
+│   ├── cumulative_sample_error_analysis.xlsx
+│   ├── error_analysis.xlsx
+│   ├── read_data.py
+│   ├── time_and_component_results.parquet
+│   ├── time_and_component_results.xlsx
+│   └── transcript.txt
+├── docs
+│   ├── PUC_RS5_A_RISCV_Processor_Core_for_Embedded_Uses.pdf
+│   └── Xosvm.md
+├── imgs
+│   ├── RS5_Block.svg
+│   ├── RS5_Environment.png
+│   ├── RS5_Interface.png
+│   ├── RS5_MemoryInterface.png
+│   ├── RS5_Peripherals.png
+│   └── RS5_TrapFlow.png
+├── LICENSE
+├── proto
+│   ├── Debouncer.vhd
+│   ├── init_mem.py
+│   ├── Peripherals.sv
+│   ├── RS5
+│   │   ├── RS5.srcs
+│   │   │   ├── constrs_1
+│   │   │   │   └── new
+│   │   │   │       └── constraint.xdc
+│   │   │   └── sources_1
+│   │   │       └── ip
+│   │   │           ├── BRAM
+│   │   │           │   └── BRAM.xci
+│   │   │           ├── DRAM_RegBank
+│   │   │           │   └── DRAM_RegBank.xci
+│   │   │           ├── DRAM_Vector_RegBank
+│   │   │           │   └── DRAM_Vector_RegBank.xci
+│   │   │           └── FIFO_BUFFER_UART
+│   │   │               └── FIFO_BUFFER_UART.xci
+│   │   ├── RS5.xpr
+│   │   └── Testbench_FPGA_Platform_behav.wcfg
+│   ├── RS5_FPGA_Platform_SUME.sv
+│   ├── RS5_FPGA_Platform.sv
+│   ├── RS5_SUME
+│   │   ├── RS5.srcs
+│   │   │   ├── constrs_1
+│   │   │   │   └── new
+│   │   │   │       └── constraint.xdc
+│   │   │   └── sources_1
+│   │   │       └── ip
+│   │   │           ├── BRAM
+│   │   │           │   └── BRAM.xci
+│   │   │           ├── DRAM_RegBank
+│   │   │           │   └── DRAM_RegBank.xci
+│   │   │           ├── FIFO_BUFFER_UART
+│   │   │           │   └── FIFO_BUFFER_UART.xci
+│   │   │           ├── mult_signed_signed
+│   │   │           │   └── mult_signed_signed.xci
+│   │   │           ├── mult_signed_unsigned
+│   │   │           │   └── mult_signed_unsigned.xci
+│   │   │           └── mult_unsigned_unsigned
+│   │   │               └── mult_unsigned_unsigned.xci
+│   │   ├── RS5.xpr
+│   │   └── Testbench_FPGA_Platform_behav.wcfg
+│   ├── Testbench_FPGA_Platform.sv
+│   ├── UART_RX_CTRL.sv
+│   └── UART_TX_CTRL.vhd
+├── README.md
+├── rtl
+│   ├── aes
+│   │   ├── riscv_crypto_aes_fwd_sbox.sv
+│   │   ├── riscv_crypto_aes_sbox.sv
+│   │   ├── riscv_crypto_sbox_aes_out.sv
+│   │   ├── riscv_crypto_sbox_aes_top.sv
+│   │   └── riscv_crypto_sbox_inv_mid.sv
+│   ├── aes_unit.sv
+│   ├── arbiter.sv
+│   ├── CSRBank.sv
+│   ├── decode.sv
+│   ├── decompresser.sv
+│   ├── div.sv
+│   ├── execute_a.sv
+│   ├── execute_b.sv
+│   ├── execute_c.sv
+│   ├── fetch.sv
+│   ├── mmu.sv
+│   ├── mulNbits.sv
+│   ├── mul.sv
+│   ├── plic.sv
+│   ├── regbank.sv
+│   ├── retire.sv
+│   ├── RS5_pkg.sv
+│   ├── RS5.sv
+│   ├── rtc.sv
+│   ├── rtl.f
+│   ├── vectorALU.sv
+│   ├── vectorCSRs.sv
+│   ├── vectorLSU.sv
+│   ├── vectorRegbank.sv
+│   └── vectorUnit.sv
+├── sim
+│   ├── compile.do
+│   ├── logs
+│   │   └── log1.txt
+│   ├── Makefile
+│   ├── RAM_mem.sv
+│   ├── sim.do
+│   ├── sim.xrun
+│   ├── testbench.sv
+│   ├── transcript
+│   ├── vector_regression.sh
+│   ├── vsim.wlf
+│   ├── wave.do
+│   ├── wlft47JBpC
+│   └── work
+│       ├── _info
+│       ├── _lib1_39.qdb
+│       ├── _lib1_39.qpg
+│       ├── _lib1_39.qtl
+│       ├── _lib.qdb
+│       ├── @_opt
+│       │   ├── _data
+│       │   │   ├── exempt4jc88g
+│       │   │   ├── exempt5eBFYz
+│       │   │   ├── exemptFCihLN
+│       │   │   └── exemptS25iOv
+│       │   ├── _lib1_8.qdb
+│       │   ├── _lib1_8.qpg
+│       │   ├── _lib1_8.qtl
+│       │   ├── _lib2_8.qdb
+│       │   ├── _lib2_8.qpg
+│       │   ├── _lib2_8.qtl
+│       │   ├── _lib3_8.qdb
+│       │   ├── _lib3_8.qpg
+│       │   ├── _lib3_8.qtl
+│       │   ├── _lib4_8.qdb
+│       │   ├── _lib4_8.qpg
+│       │   ├── _lib4_8.qtl
+│       │   ├── _lib5_8.qdb
+│       │   ├── _lib5_8.qpg
+│       │   ├── _lib5_8.qtl
+│       │   ├── _lib6_8.qdb
+│       │   ├── _lib6_8.qpg
+│       │   ├── _lib6_8.qtl
+│       │   └── _lib.qdb
+│       ├── @_opt1
+│       │   ├── _data
+│       │   │   ├── exempt7JRsJK
+│       │   │   ├── exemptfil7pO
+│       │   │   ├── exemptKfRbpp
+│       │   │   └── exempttPIeAJ
+│       │   ├── _lib1_1.qdb
+│       │   ├── _lib1_1.qpg
+│       │   ├── _lib1_1.qtl
+│       │   ├── _lib2_1.qdb
+│       │   ├── _lib2_1.qpg
+│       │   ├── _lib2_1.qtl
+│       │   ├── _lib3_1.qdb
+│       │   ├── _lib3_1.qpg
+│       │   ├── _lib3_1.qtl
+│       │   ├── _lib4_1.qdb
+│       │   ├── _lib4_1.qpg
+│       │   ├── _lib4_1.qtl
+│       │   ├── _lib5_1.qdb
+│       │   ├── _lib5_1.qpg
+│       │   ├── _lib5_1.qtl
+│       │   ├── _lib6_1.qdb
+│       │   ├── _lib6_1.qpg
+│       │   ├── _lib6_1.qtl
+│       │   └── _lib.qdb
+│       ├── _temp
+│       ├── _tempmsg
+│       └── _vmake
+└── tree.txt
+
+71 directories, 415 files
