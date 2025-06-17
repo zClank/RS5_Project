@@ -1,7 +1,8 @@
-> Projeto desenvolvido como parte da disciplina **98G10-04 Confiabilidade e Segurança de Hardware** — PUCRS  
-> Professor: Anderson Domingues
+# Redundância Tripla em Módulo de Execução do Processador RS5
 🔗 Repositório: [https://github.com/zClank/RS5_Project](https://github.com/zClank/RS5_Project)
 
+> Projeto desenvolvido como parte da disciplina **98G10-04 Confiabilidade e Segurança de Hardware** — PUCRS  
+> Professor: Anderson Domingues
 
 ## Instruções de Execução
 
@@ -165,7 +166,7 @@ $$
 R_{\text{sistema}} = 1 - 0,00005 = 0,99995
 $$
 
-### Comparação entre simulação e análise teórica
+## Comparação entre simulação e análise teórica
 
 Na simulação, considerando uma amostra de 5000 operações de soma, foi observada uma taxa de falha final (`result_o`) de aproximadamente 0,52%, equivalente a uma confiabilidade empírica de 99,48%.
 
@@ -177,10 +178,10 @@ A diferença entre o valor esperado teoricamente (99,995%) e o observado (99,48%
 
 Outras fontes potenciais de discrepância incluem o comportamento do árbitro, o alinhamento dos tempos de processamento e o próprio método de coleta e interpretação dos resultados.
 
-### Informações adicionais
+## Informações adicionais
 
 **Autores**:  
-André Lisboa
-Felipe Lacerda
-Lucas Azevedo
-Pedro Filippi
+* André Lisboa
+* Felipe Lacerda
+* Lucas Azevedo
+* Pedro Filippi
